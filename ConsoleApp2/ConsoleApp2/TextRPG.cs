@@ -25,7 +25,7 @@ namespace ConsoleApp2
             Weapons sword = new Weapons(false, false, "낡은 검", "공격력", 2, "쉽게 볼 수 있는 낡은 검입니다.", 600);
             Weapons axe = new Weapons(false, false, "청동 도끼", "공격력", 5, "어디선가 사용됐던 것 같은 도끼입니다.", 1500);
             Weapons rtanSpear = new Weapons(false, false, "스파르타의 창", "공격력", 7, "스파르타의 전사들이 사용했다는 전설의 창입니다.", 3000);
-            Weapons mafioso = new Weapons(false, false, "Mafioso", "공격력", 99, "누구도 mafioso를 막을 순 없습니다.", 99999);
+            Weapons mafioso = new Weapons(false, false, "Mafioso", "공격력", 99, "I see one of them", 99999);
             
             Character character = new Character("Chad", "전사", 1, 100, 10, 5, 10000);
 
@@ -49,6 +49,7 @@ namespace ConsoleApp2
             {
                 if (welcomeText)
                 {
+                    Console.WriteLine();
                     Console.WriteLine("스파르타 마을에 오신 여러분 환영합니다.");
                     Console.WriteLine("이곳에서 던전으로 들어가기 전 활동을 할 수 있습니다.\n");
                     welcomeText = false;
@@ -695,9 +696,18 @@ namespace ConsoleApp2
             {
                 if (!File.Exists(saveFilePath)) 
                 {
-                    Console.WriteLine("저장된 데이터가 없음");
-                   
-                    return;
+                    Console.WriteLine("\n저장된 데이터가 없습니다.");
+                    Console.WriteLine("새 게임을 시작하시겠다면 1번, 그대로 종료하시겠다면 2번을 누르세요.");
+                    int match = MatchOrNot(1, 2);
+                    if (match == 1)
+                    {
+                        return;
+                    }
+                    else if (match == 2) 
+                    {
+                        Console.WriteLine("게임을 종료합니다.");
+                        Environment.Exit(0);
+                    } 
                 }
 
                 using(StreamReader stream = new StreamReader(saveFilePath))
