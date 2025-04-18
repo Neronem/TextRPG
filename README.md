@@ -1,2 +1,5 @@
 # TextRPG
-TextRPG - Play RPG with text.
+♣ 22조 송규민입니다
+구현 내용은 TextRPG.cs 안에 있습니다
+하나하나 다 체크하는거 힘드시겠어요
+고생많으십니다
