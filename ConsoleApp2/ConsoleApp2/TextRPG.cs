@@ -19,6 +19,7 @@ namespace ConsoleApp2
     {
         public void Run()
         {
+            // 무기 & 캐릭터 객체 생성
             Weapons noobArmor = new Weapons(false, false, "수련자 갑옷", "방어력", 5, "수련에 도움을 주는 갑옷입니다.", 1000);
             Weapons ironArmor = new Weapons(false, false, "무쇠갑옷", "방어력", 9, "무쇠로 만들어져 튼튼한 갑옷입니다.", 2000);
             Weapons rtanArmor = new Weapons(false, false, "스파르타의 갑옷", "방어력", 15, "스파르타의 전사들이 사용했다는 전설의 갑옷입니다.", 3500);
@@ -29,6 +30,8 @@ namespace ConsoleApp2
             
             Character character = new Character("Chad", "전사", 1, 100, 10, 5, 10000);
 
+
+            // 게임 실행 
             Console.WriteLine("1. 이전 데이터 불러오기");
             Console.WriteLine("2. 게임 시작하기");
             Console.Write(">>");
@@ -42,8 +45,6 @@ namespace ConsoleApp2
 
             // 환영합니다 문구는 최초 시작 시 한번만
             bool welcomeText = true;
-            // 캐릭터 객체 생성
-
 
             while (true)
             {
